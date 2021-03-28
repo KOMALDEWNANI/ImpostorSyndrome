@@ -1,6 +1,7 @@
 package com.example.impostorsyndrome;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,12 +36,15 @@ public class MainActivity extends AppCompatActivity {
                     );
                     builder.setIcon(R.drawable.ic_check);
                     builder.setTitle("Login Successfully");
-                    builder.setMessage("Welcome to Android Coding");
+                    builder.setMessage("Welcome to ImposterSyndrome App");
 
                     builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
+
+                            Intent intent = new Intent(MainActivity.this,GameScreen_Theme1.class);
+                            startActivity(intent);
+                            dialog.dismiss();
                         }
                     });
                     AlertDialog alertDialog = builder.create();
